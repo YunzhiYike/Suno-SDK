@@ -22,8 +22,8 @@ composer require yunzhiyike/suno-ai-sdk
 ```
 
 ## Methods
--[x] `generateMusic` > [description: generate music, return `uid` ]
--[x] `refreshSession` > [description: Increase session survival time, return `PersonalInfoEntity` ]
--[x] `getUserInfoByEmail` > [description: Obtaining user information via e-mail, return `PersonalInfoEntity` ]
--[x] `getWorkList` > [description: Obtaining generated music list, return `WorkEntity[]` ]
--[x] `getAvailableTimes` > [description: Getting the number of times available, return  `int` ]
+-[x] `generateMusic`  [description: generate music, return `uid` ]
+-[x] `refreshSession` [description: Increase session survival time, return `PersonalInfoEntity` ]
+-[x] `getUserInfoByEmail` [description: Obtaining user information via e-mail, return `PersonalInfoEntity` ]
+-[x] `getWorkList` [description: Obtaining generated music list, return `WorkEntity[]` ]
+-[x] `getAvailableTimes` [description: Getting the number of times available, return  `int` ]
