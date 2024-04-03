@@ -1,4 +1,4 @@
-[English](README.md) | 中文 | [日本語](./READMEJP.md)
+[English](README.md) | 中文 | [日本語](./README-JP.md)
 
 <p align="center"><a href="https://www.suno.ai" target="_blank" rel="noopener noreferrer"><img width="100" src="img.png" alt="suno Logo"></a></p>
 
