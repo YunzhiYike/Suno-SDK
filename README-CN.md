@@ -1,4 +1,4 @@
-English | [中文](./README-CN.md) | [日本語](./READMEJP.md)
+[English](README.md) | 中文 | [日本語](./READMEJP.md)
 
 <p align="center"><a href="https://www.suno.ai" target="_blank" rel="noopener noreferrer"><img width="100" src="img.png" alt="suno Logo"></a></p>
 
@@ -12,16 +12,16 @@ English | [中文](./README-CN.md) | [日本語](./READMEJP.md)
   <a href="https://packagist.org/packages/yunzhiyike/suno-ai-sdk"><img src="https://poser.pugx.org/yunzhiyike/suno-ai-sdk/d/monthly" alt="Monthly Downloads"></a>
 </p>
 
-# Unofficial Suno PHP-SDK
-This is an unofficial Suno API based on PHP; it provides support for all Suno interfaces.
+# 非官方 Suno PHP-SDK
+这是一个基于 PHP 的非官方 Suno API；它为所有 Suno 接口提供支持。
 
-## Installation
+## 安装
 
 ```bash
 composer require yunzhiyike/suno-ai-sdk
 ```
 
-## Methods
+## 方法
 ### refreshSession
 
 ```php
