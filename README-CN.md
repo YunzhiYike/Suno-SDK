@@ -1,6 +1,6 @@
 [English](README.md) | 中文 | [日本語](./README-JP.md)
 
-<p align="center"><a href="https://www.suno.ai" target="_blank" rel="noopener noreferrer"><img width="100" src="img.png" alt="suno Logo"></a></p>
+<p align="center"><a href="https://sunoai.ai/" target="_blank" rel="noopener noreferrer"><img width="100" src="img.png" alt="suno Logo"></a></p>
 
 <p align="center">
   <a href="https://github.com/YunzhiYike/Suno-SDK/releases"><img src="https://poser.pugx.org/yunzhiyike/suno-ai-sdk/v/stable" alt="Stable Version"></a>
@@ -22,8 +22,8 @@ composer require yunzhiyike/suno-ai-sdk
 ```
 
 ## 方法
-### refreshSession
-
-```php
-
-```
+-[x] `generateMusic` > [说明： 生成音乐， 返回 `uid` ]
+-[x] `refreshSession` > [说明： 延长会话时间, 返回 `PersonalInfoEntity` ]
+-[x] `getUserInfoByEmail` > [说明： 通过电子邮件获取用户信息, 返回 `PersonalInfoEntity` ]
+-[x] `getWorkList` > [说明：获取生成的音乐列表, 返回 `WorkEntity[]` ]
+-[x] `getAvailableTimes` > [说明： 获取可用次数, 返回  `int` ]

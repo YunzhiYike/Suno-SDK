@@ -1,6 +1,6 @@
 [English](README.md) | [中文](./README-CN.md) | 日本語
 
-<p align="center"><a href="https://www.suno.ai" target="_blank" rel="noopener noreferrer"><img width="100" src="img.png" alt="suno Logo"></a></p>
+<p align="center"><a href="https://sunoai.ai/" target="_blank" rel="noopener noreferrer"><img width="100" src="img.png" alt="suno Logo"></a></p>
 
 <p align="center">
   <a href="https://github.com/YunzhiYike/Suno-SDK/releases"><img src="https://poser.pugx.org/yunzhiyike/suno-ai-sdk/v/stable" alt="Stable Version"></a>
@@ -22,8 +22,8 @@ composer require yunzhiyike/suno-ai-sdk
 ```
 
 ## メソッド
-### refreshSession
-
-```php
-
-```
+-[x] `generateMusic` > [記述: ジェネレート・ミュージック, 戻る, `uid` ]
+-[x] `refreshSession` > [記述: セッション生存時間の延長, 戻る `PersonalInfoEntity` ]
+-[x] `getUserInfoByEmail` > [記述: 電子メールによるユーザー情報の取得, 戻る `PersonalInfoEntity` ]
+-[x] `getWorkList` > [記述: 生成された楽曲リストの取得, 戻る `WorkEntity[]` ]
+-[x] `getAvailableTimes` > [記述: 利用可能回数取得, 戻る  `int` ]
