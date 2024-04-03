@@ -1,0 +1,32 @@
+{
+    "name": "yunzhiyike/suno-ai-sdk",
+    "description": "This is an unofficial Suno API based on PHP; it provides support for all Suno interfaces.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Yunzhiyike\\SunoAiSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yunzhiyike\\Test\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "云知易客",
+            "email": "wuaiyiyun2022@163.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.52",
+        "phpunit/phpunit": "^10.5"
+    },
+    "scripts": {
+        "cs-fix": "php-cs-fixer fix $1",
+        "test": "phpunit -c phpunit.xml --colors=always"
+    }
+}
