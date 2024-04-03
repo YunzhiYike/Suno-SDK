@@ -22,8 +22,56 @@ composer require yunzhiyike/suno-ai-sdk
 ```
 
 ## メソッド
--[x] `generateMusic` > [記述: ジェネレート・ミュージック, 戻る, `uid` ]
--[x] `refreshSession` > [記述: セッション生存時間の延長, 戻る `PersonalInfoEntity` ]
--[x] `getUserInfoByEmail` > [記述: 電子メールによるユーザー情報の取得, 戻る `PersonalInfoEntity` ]
--[x] `getWorkList` > [記述: 生成された楽曲リストの取得, 戻る `WorkEntity[]` ]
--[x] `getAvailableTimes` > [記述: 利用可能回数取得, 戻る  `int` ]
+
+- [x] `generateMusic` [記述: ジェネレート・ミュージック, 戻る, `uid` ]
+- [x] `refreshSession` [記述: セッション生存時間の延長, 戻る `PersonalInfoEntity` ]
+- [x] `getUserInfoByEmail` [記述: 電子メールによるユーザー情報の取得, 戻る `PersonalInfoEntity` ]
+- [x] `getWorkList` [記述: 生成された楽曲リストの取得, 戻る `WorkEntity[]` ]
+- [x] `getAvailableTimes` [記述: 利用可能回数取得, 戻る  `int` ]
+
+
+## Cookie 引き出す 🚗
+
+> 在此之前你需要先登录！
+
+![img_1.png](img_1.png)
+
+
+## 典型例 🌲
+```php
+<?php
+
+declare(strict_types=1);
+/**
+ * This file is part of Yunzhiyike
+ */
+
+namespace Yunzhiyike\Test;
+
+use PHPUnit\Framework\TestCase;
+use Yunzhiyike\SunoAiSdk\SunoAi;
+
+/**
+ * @internal
+ * @coversNothing
+ */
+class SunoAiTest extends TestCase
+{
+    public function test()
+    {
+        $cookie = 'your suno-ai cookie';
+        $timeOut = 60;
+        $sunoApi = new SunoAi($cookie, $timeOut);
+        $info = $sunoApi->refreshSession();
+        $userInfo = $sunoApi->getUserInfoByEmail($info->getEmail());
+        $page = 1;
+        $res = $sunoApi->getWorkList($userInfo->getUserId(), $page);
+        foreach ($res as $r) {
+            var_dump($r);
+        }
+        var_dump($sunoApi->getAvailableTimes($userInfo->getUserId()));
+        var_dump($sunoApi->generateMusic($userInfo->getUserId(), 'music title', 'music text', 'music tags', true));
+    }
+}
+
+```

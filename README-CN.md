@@ -15,15 +15,63 @@
 # 非官方 Suno PHP-SDK
 这是一个基于 PHP 的非官方 Suno API；它为所有 Suno 接口提供支持。
 
-## 安装
+## 安装 🔨
 
 ```bash
 composer require yunzhiyike/suno-ai-sdk
 ```
 
-## 方法
--[x] `generateMusic` > [说明： 生成音乐， 返回 `uid` ]
--[x] `refreshSession` > [说明： 延长会话时间, 返回 `PersonalInfoEntity` ]
--[x] `getUserInfoByEmail` > [说明： 通过电子邮件获取用户信息, 返回 `PersonalInfoEntity` ]
--[x] `getWorkList` > [说明：获取生成的音乐列表, 返回 `WorkEntity[]` ]
--[x] `getAvailableTimes` > [说明： 获取可用次数, 返回  `int` ]
+## 方法 📖
+
+- [x] `generateMusic` [说明： 生成音乐， 返回 `uid` ]
+- [x] `refreshSession` [说明： 延长会话时间, 返回 `PersonalInfoEntity` ]
+- [x] `getUserInfoByEmail` [说明： 通过电子邮件获取用户信息, 返回 `PersonalInfoEntity` ]
+- [x] `getWorkList` [说明：获取生成的音乐列表, 返回 `WorkEntity[]` ]
+- [x] `getAvailableTimes` [说明： 获取可用次数, 返回  `int` ]
+
+
+## Cookie提取 🚗
+
+> 在此之前你需要先登录！
+
+![img_1.png](img_1.png)
+
+
+## 示例 🌲
+```php
+<?php
+
+declare(strict_types=1);
+/**
+ * This file is part of Yunzhiyike
+ */
+
+namespace Yunzhiyike\Test;
+
+use PHPUnit\Framework\TestCase;
+use Yunzhiyike\SunoAiSdk\SunoAi;
+
+/**
+ * @internal
+ * @coversNothing
+ */
+class SunoAiTest extends TestCase
+{
+    public function test()
+    {
+        $cookie = 'your suno-ai cookie';
+        $timeOut = 60;
+        $sunoApi = new SunoAi($cookie, $timeOut);
+        $info = $sunoApi->refreshSession();
+        $userInfo = $sunoApi->getUserInfoByEmail($info->getEmail());
+        $page = 1;
+        $res = $sunoApi->getWorkList($userInfo->getUserId(), $page);
+        foreach ($res as $r) {
+            var_dump($r);
+        }
+        var_dump($sunoApi->getAvailableTimes($userInfo->getUserId()));
+        var_dump($sunoApi->generateMusic($userInfo->getUserId(), 'music title', 'music text', 'music tags', true));
+    }
+}
+
+```

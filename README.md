@@ -15,17 +15,63 @@ English | [中文](./README-CN.md) | [日本語](./README-JP.md)
 # Unofficial Suno PHP-SDK
 This is an unofficial Suno API based on PHP; it provides support for all Suno interfaces.
 
-## Installation
+## Installation 🔨
 
 ```bash
 composer require yunzhiyike/suno-ai-sdk
 ```
 
-## Methods
+## Methods 📖
 
 - [x] `generateMusic`  [description: generate music, return `uid` ]
-
 - [x] `refreshSession` [description: Increase session survival time, return `PersonalInfoEntity` ]
 - [x] `getUserInfoByEmail` [description: Obtaining user information via e-mail, return `PersonalInfoEntity` ]
 - [x] `getWorkList` [description: Obtaining generated music list, return `WorkEntity[]` ]
 - [x] `getAvailableTimes` [description: Getting the number of times available, return  `int` ]
+
+
+## Cookie Extraction 🚗
+
+> Before that you need to login!
+
+![img_1.png](img_1.png)
+
+
+## Demo 🌲
+```php
+<?php
+
+declare(strict_types=1);
+/**
+ * This file is part of Yunzhiyike
+ */
+
+namespace Yunzhiyike\Test;
+
+use PHPUnit\Framework\TestCase;
+use Yunzhiyike\SunoAiSdk\SunoAi;
+
+/**
+ * @internal
+ * @coversNothing
+ */
+class SunoAiTest extends TestCase
+{
+    public function test()
+    {
+        $cookie = 'your suno-ai cookie';
+        $timeOut = 60;
+        $sunoApi = new SunoAi($cookie, $timeOut);
+        $info = $sunoApi->refreshSession();
+        $userInfo = $sunoApi->getUserInfoByEmail($info->getEmail());
+        $page = 1;
+        $res = $sunoApi->getWorkList($userInfo->getUserId(), $page);
+        foreach ($res as $r) {
+            var_dump($r);
+        }
+        var_dump($sunoApi->getAvailableTimes($userInfo->getUserId()));
+        var_dump($sunoApi->generateMusic($userInfo->getUserId(), 'music title', 'music text', 'music tags', true));
+    }
+}
+
+```
