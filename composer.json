@@ -2,6 +2,7 @@
     "name": "yunzhiyike/suno-ai-sdk",
     "description": "This is an unofficial Suno API based on PHP; it provides support for all Suno interfaces.",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Yunzhiyike\\SunoAiSdk\\": "src/"
